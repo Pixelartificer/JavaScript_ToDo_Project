@@ -1,0 +1,182 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  min-height: 2000px;
+
+  background-image: url("./Image/Field.jpg");
+  background-size: 100% auto;
+  background-position: top center;
+  background-repeat: no-repeat;
+
+  overflow-x: hidden;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+section:first-child {
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+
+section:first-child h1 {
+  color: white;
+  font-size: 50px;
+}
+
+/* =========================
+   COMMON PLAYER CARD
+========================= */
+
+.player_01 {
+  width: 100px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* =========================
+   PLAYER IMAGE
+========================= */
+
+.player_01 > img:first-child {
+  width: 75px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* =========================
+   LEFT ARROW
+========================= */
+
+.larrow {
+  width: 20px !important;
+  height: 20px !important;
+  filter: brightness(0) invert(1);
+  position: absolute;
+  bottom: 14px;
+  left: 12px;
+  margin: 0 !important;
+  border-radius: 50%;
+  z-index: 10;
+
+  cursor: pointer;
+}
+
+/* =========================
+   RIGHT ARROW
+========================= */
+
+.rarrow {
+  width: 20px !important;
+  height: 20px !important;
+
+  filter: brightness(0) invert(1);
+
+  position: absolute;
+
+  bottom: 14px;
+  right: 12px;
+
+  margin: 0 !important;
+
+  border-radius: 50%;
+
+  z-index: 10;
+
+  cursor: pointer;
+}
+
+/* =========================
+   GOALKEEPER
+========================= */
+
+.goal {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+/* =========================
+   DEFENDERS
+========================= */
+
+.defender {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: flex-start;
+
+  margin-bottom: 45px;
+}
+
+/* =========================
+   MIDFIELDERS
+========================= */
+
+.midielder {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: flex-start;
+
+  margin-bottom: 100px;
+}
+
+/* =========================
+   FORWARDS
+========================= */
+
+.forward {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  align-items: flex-start;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .player_01 {
+    width: 90px;
+    height: 140px;
+  }
+
+  .player_01 > img:first-child {
+    width: 70px;
+  }
+
+  .defender,
+  .midielder,
+  .forward {
+    justify-content: center;
+    gap: 15px;
+  }
+}
