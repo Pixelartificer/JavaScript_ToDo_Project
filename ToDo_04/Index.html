@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3D Liquid Mode Button</title>
+
+    <link rel="stylesheet" href="./Style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="mode-switcher">
+
+            <!-- SLEEP -->
+            <button class="mode sleep" data-mode="Sleep">
+
+                <span class="icon moon">
+                    ☾
+                </span>
+
+                <span class="text">
+                    Sleep
+                </span>
+
+                <span class="dots">
+                    •••
+                </span>
+
+            </button>
+
+
+            <!-- DO NOT DISTURB -->
+            <button
+                class="mode active disturb"
+                data-mode="Do Not Disturb">
+
+                <span class="icon moon">
+                    ☾
+                </span>
+
+                <span class="text">
+                    Do Not Disturb
+                </span>
+
+                <span class="dots">
+                    •••
+                </span>
+
+            </button>
+
+
+            <!-- PERSONAL -->
+            <button
+                class="mode personal"
+                data-mode="Personal">
+
+                <span class="icon people">
+                    ●●
+                </span>
+
+                <span class="text">
+                    Personal
+                </span>
+
+                <span class="dots">
+                    •••
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div class="current-mode">
+            Current mode:
+            <strong id="currentMode">
+                Do Not Disturb
+            </strong>
+        </div>
+
+    </div>
+
+
+    <script src="./toDo_04.js"></script>
+
+</body>
+
+</html>

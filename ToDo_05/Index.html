@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Number Challenge</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="min-h-screen bg-slate-950 text-white font-poppins">
+    <!-- Background -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div
+        class="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl"
+      ></div>
+
+      <div
+        class="absolute top-1/2 -right-40 w-96 h-96 rounded-full bg-purple-600/20 blur-3xl"
+      ></div>
+
+      <div
+        class="absolute -bottom-40 left-1/3 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl"
+      ></div>
+    </div>
+
+    <!-- Main -->
+    <main class="min-h-screen flex items-center justify-center px-5 py-10">
+      <div class="w-full max-w-xl">
+        <!-- Game Header -->
+        <div class="text-center mb-8">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.8)]"
+            >
+            </span>
+
+            <span class="text-xs text-slate-400"> NUMBER CHALLENGE </span>
+          </div>
+
+          <h1
+            class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-white via-indigo-200 to-purple-300 bg-clip-text text-transparent"
+          >
+            Guess The Number
+          </h1>
+
+          <p class="mt-3 text-sm text-slate-500">
+            Choose a number between 1 and 10
+          </p>
+        </div>
+
+        <!-- ================================================= -->
+        <!-- PLAYER ONE -->
+        <!-- ================================================= -->
+
+        <section
+          id="playerOneSection"
+          class="relative rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-6 sm:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
+        >
+          <!-- Top Line -->
+          <div
+            class="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-indigo-500 to-transparent"
+          ></div>
+
+          <!-- Player Header -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-4">
+              <!-- Number -->
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-indigo-500/20"
+              >
+                01
+              </div>
+
+              <div>
+                <p
+                  class="text-[11px] uppercase tracking-[0.25em] text-slate-500"
+                >
+                  Challenger
+                </p>
+
+                <h1 id="playerOneHeading" class="text-2xl font-bold text-white">
+                  Player One
+                </h1>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="flex items-center gap-2">
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]"
+              >
+              </span>
+
+              <span class="hidden sm:block text-xs text-slate-500">
+                Your Turn
+              </span>
+            </div>
+          </div>
+
+          <!-- Instruction -->
+          <div class="mb-6 rounded-2xl border border-white/10 bg-black/20 p-5">
+            <p class="text-sm font-medium text-slate-300">
+              Choose your secret number
+            </p>
+
+            <p class="mt-1 text-xs leading-5 text-slate-600">
+              Enter any number from 1 to 10. Your opponent will try to guess it.
+            </p>
+          </div>
+
+          <!-- Input -->
+          <div>
+            <label
+              for="playerOneInput"
+              class="block mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400"
+            >
+              Your Number
+            </label>
+
+            <input
+              type="password"
+              id="playerOneInput"
+              placeholder="Enter a number within 1-10"
+              class="w-full h-14 px-5 rounded-2xl bg-slate-900/80 border border-white/10 text-white text-sm placeholder:text-slate-600 outline-none transition-all duration-300 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 focus:bg-slate-900"
+            />
+          </div>
+
+          <!-- Submit -->
+          <button
+            id="playerOneBtn"
+            class="w-full h-14 mt-5 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 text-sm font-semibold text-white shadow-lg shadow-indigo-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-indigo-400 hover:to-purple-500 hover:shadow-xl hover:shadow-indigo-500/30 active:translate-y-0 active:scale-[0.98]"
+          >
+            Submit Number
+          </button>
+
+          <!-- Result -->
+          <div
+            class="mt-5 min-h-[60px] rounded-2xl border border-white/5 bg-black/20 flex items-center justify-center px-4"
+          >
+            <h2
+              id="playerOneResult"
+              class="text-sm font-medium text-slate-500 text-center"
+            >
+              Waiting for your number...
+            </h2>
+          </div>
+        </section>
+
+        <!-- ================================================= -->
+        <!-- PLAYER TWO -->
+        <!-- ================================================= -->
+
+        <section
+          id="playerTwoSection"
+          class="hidden relative rounded-3xl border border-white/10 bg-white/[0.06] backdrop-blur-xl p-6 sm:p-8 shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
+        >
+          <!-- Top Line -->
+          <div
+            class="absolute top-0 left-10 right-10 h-px bg-gradient-to-r from-transparent via-purple-500 to-transparent"
+          ></div>
+
+          <!-- Player Header -->
+          <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-4">
+              <!-- Number -->
+              <div
+                class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-xl font-bold shadow-lg shadow-purple-500/20"
+              >
+                02
+              </div>
+
+              <div>
+                <p
+                  class="text-[11px] uppercase tracking-[0.25em] text-slate-500"
+                >
+                  Challenger
+                </p>
+
+                <h1 id="playerTwoHeading" class="text-2xl font-bold text-white">
+                  Player Two
+                </h1>
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="flex items-center gap-2">
+              <span
+                class="w-2.5 h-2.5 rounded-full bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.8)]"
+              >
+              </span>
+
+              <span class="hidden sm:block text-xs text-slate-500">
+                Your Turn
+              </span>
+            </div>
+          </div>
+
+          <!-- ============================== -->
+          <!-- COUNTDOWN COUNTER -->
+          <!-- ============================== -->
+
+          <div
+            class="mb-6 rounded-2xl border border-purple-500/20 bg-purple-500/[0.05] p-5"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p
+                  class="text-[11px] uppercase tracking-[0.2em] text-slate-500"
+                >
+                  Time Remaining
+                </p>
+
+                <p class="mt-1 text-xs text-slate-600">
+                  Make your guess before you runs out.
+                </p>
+              </div>
+
+              <!-- Counter -->
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-14 h-14 rounded-xl border border-purple-500/20 bg-slate-950/70 flex items-center justify-center shadow-lg shadow-purple-500/10"
+                >
+                  <span
+                    id="playerTwoCounter"
+                    class="text-2xl font-bold text-purple-400 tabular-nums"
+                  >
+                    10
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div
+              class="mt-5 h-1.5 w-full overflow-hidden rounded-full bg-slate-800"
+            >
+              <div
+                id="playerTwoCounterBar"
+                class="h-full w-full rounded-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-1000"
+              ></div>
+            </div>
+          </div>
+
+          <!-- Instruction -->
+          <div class="mb-6 rounded-2xl border border-white/10 bg-black/20 p-5">
+            <p class="text-sm font-medium text-slate-300">
+              Guess Player One's number
+            </p>
+
+            <p class="mt-1 text-xs leading-5 text-slate-600">
+              Try to guess the secret number between 1 and 10.
+            </p>
+          </div>
+
+          <!-- Input -->
+          <div>
+            <label
+              for="playerTwoInput"
+              class="block mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400"
+            >
+              Your Guess
+            </label>
+
+            <input
+              type="text"
+              id="playerTwoInput"
+              placeholder="Enter a number within 1-10"
+              class="w-full h-14 px-5 rounded-2xl bg-slate-900/80 border border-white/10 text-white text-sm placeholder:text-slate-600 outline-none transition-all duration-300 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 focus:bg-slate-900"
+            />
+          </div>
+
+          <!-- Submit -->
+          <button
+            id="playerTwoBtn"
+            class="w-full h-14 mt-5 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-600 text-sm font-semibold text-white shadow-lg shadow-purple-500/20 transition-all duration-300 hover:-translate-y-0.5 hover:from-purple-400 hover:to-pink-500 hover:shadow-xl hover:shadow-purple-500/30 active:translate-y-0 active:scale-[0.98]"
+          >
+            Submit Guess
+          </button>
+
+          <!-- Result -->
+          <div
+            class="mt-5 min-h-[60px] rounded-2xl border border-white/5 bg-black/20 flex items-center justify-center px-4"
+          >
+            <h2
+              id="playerTwoResult"
+              class="text-sm font-medium text-slate-500 text-center"
+            >
+              Waiting for your guess...
+            </h2>
+          </div>
+        </section>
+       
+      </div>
+    </main>
+
+    <!-- Your JavaScript -->
+    <script src="./toDo_04.js"></script>
+  </body>
+</html>

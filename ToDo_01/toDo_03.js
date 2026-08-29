@@ -21,7 +21,7 @@ let currentPlayer = 0;
 // Right Arrow
 
 rightArrow.addEventListener("click", function () {
-  currentPlayer++;
+  currentPlayer++;c
 
   if (currentPlayer >= players.length) {
     currentPlayer = 0;
