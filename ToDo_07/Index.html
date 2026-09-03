@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modern Typewriter</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Signature Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="min-h-screen bg-slate-950 text-white flex items-center justify-center overflow-hidden"
+  >
+    <!-- Background Glow -->
+
+    <div
+      class="absolute top-[-200px] left-[-200px] w-[500px] h-[500px] rounded-full bg-purple-600/20 blur-[120px]"
+    ></div>
+
+    <div
+      class="absolute bottom-[-200px] right-[-200px] w-[500px] h-[500px] rounded-full bg-cyan-500/20 blur-[120px]"
+    ></div>
+
+    <!-- Main Content -->
+
+    <main class="relative z-10 w-full px-6 sm:px-10 md:px-16">
+      <div class="max-w-7xl mx-auto">
+        <!-- Small Label -->
+
+        <p
+          class="mb-5 text-sm sm:text-base uppercase tracking-[0.4em] text-slate-500 font-medium"
+        >
+          Welcome to my world
+        </p>
+
+        <!-- Main Heading -->
+
+        <div class="flex items-center whitespace-nowrap overflow-visible">
+          <h1
+            class="heading inline-flex items-center whitespace-nowrap text-[clamp(3rem,8vw,8rem)] leading-none tracking-wide"
+            style="font-family: &quot;Great Vibes&quot;, cursive"
+            data-text="My Name Is Lawrence"
+          ></h1>
+
+          <!-- Colorful Cursor -->
+
+          <span
+            class="ml-3 sm:ml-4 inline-block shrink-0 w-[4px] sm:w-[6px] h-[3rem] sm:h-[5rem] md:h-[6rem] lg:h-[7rem] rounded-full bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 shadow-[0_0_10px_#22d3ee,0_0_20px_#a855f7,0_0_35px_#ec4899] animate-pulse"
+          ></span>
+        </div>
+
+        <!-- Small Description -->
+
+        <p
+          class="mt-7 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-slate-400"
+        >
+          Creating modern experiences with clean code, creative ideas and
+          beautiful interfaces.
+        </p>
+
+        <!-- Bottom Accent -->
+
+        <div
+          class="mt-10 w-32 h-[3px] rounded-full bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]"
+        ></div>
+      </div>
+    </main>
+
+    <script src="./toDo_07.js"></script>
+  </body>
+</html>

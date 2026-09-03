@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Modern Counter</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="min-h-screen bg-slate-950 flex items-center justify-center overflow-hidden"
+  >
+    <!-- Background Glow -->
+    <div
+      class="absolute -top-32 -left-32 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl"
+    ></div>
+
+    <div
+      class="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl"
+    ></div>
+
+    <!-- Main Container -->
+    <div class="relative w-full max-w-6xl mx-auto px-6">
+      <!-- Heading -->
+      <div class="text-center mb-12">
+        <p
+          class="text-sm uppercase tracking-[0.4em] text-cyan-400 font-semibold mb-3"
+        >
+          Statistics
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-black text-white tracking-tight">
+          Counter
+        </h1>
+
+        <div
+          class="mx-auto mt-5 w-20 h-1 rounded-full bg-gradient-to-r from-cyan-400 to-purple-500"
+        ></div>
+      </div>
+
+      <!-- Counters -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Counter 01 -->
+        <div
+          class="group relative h-56 rounded-[2rem] bg-white/[0.07] backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/30 overflow-hidden flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.11] hover:border-cyan-400/30"
+        >
+          <!-- Glow -->
+          <div
+            class="absolute w-32 h-32 bg-cyan-400/20 rounded-full blur-3xl group-hover:bg-cyan-400/30 transition-all duration-500"
+          ></div>
+
+          <span
+            class="relative z-10 text-xs uppercase tracking-[0.3em] text-slate-400 mb-4"
+          >
+            Counter 01
+          </span>
+
+          <h1
+            class="counter01 relative z-10 text-6xl font-black text-slate-300 transition-all duration-200 drop-shadow-lg"
+            data-number01="20"
+            data-speed01="100"
+          >
+            0
+          </h1>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent opacity-40 group-hover:opacity-100 transition-all duration-500"
+          ></div>
+        </div>
+
+        <!-- Counter 02 -->
+        <div
+          class="group relative h-56 rounded-[2rem] bg-white/[0.07] backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/30 overflow-hidden flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.11] hover:border-purple-400/30"
+        >
+          <div
+            class="absolute w-32 h-32 bg-purple-400/20 rounded-full blur-3xl group-hover:bg-purple-400/30 transition-all duration-500"
+          ></div>
+
+          <span
+            class="relative z-10 text-xs uppercase tracking-[0.3em] text-slate-400 mb-4"
+          >
+            Counter 02
+          </span>
+
+          <h1
+            class="counter01 relative z-10 text-6xl font-black text-slate-300 transition-all duration-200 drop-shadow-lg"
+            data-number01="30"
+            data-speed01="100"
+          >
+            0
+          </h1>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-40 group-hover:opacity-100 transition-all duration-500"
+          ></div>
+        </div>
+
+        <!-- Counter 03 -->
+        <div
+          class="group relative h-56 rounded-[2rem] bg-white/[0.07] backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/30 overflow-hidden flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.11] hover:border-pink-400/30"
+        >
+          <div
+            class="absolute w-32 h-32 bg-pink-400/20 rounded-full blur-3xl group-hover:bg-pink-400/30 transition-all duration-500"
+          ></div>
+
+          <span
+            class="relative z-10 text-xs uppercase tracking-[0.3em] text-slate-400 mb-4"
+          >
+            Counter 03
+          </span>
+
+          <h1
+            class="counter01 relative z-10 text-6xl font-black text-slate-300 transition-all duration-200 drop-shadow-lg"
+            data-number01="40"
+            data-speed01="100"
+          >
+            0
+          </h1>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pink-400 to-transparent opacity-40 group-hover:opacity-100 transition-all duration-500"
+          ></div>
+        </div>
+
+        <!-- Counter 04 -->
+        <div
+          class="group relative h-56 rounded-[2rem] bg-white/[0.07] backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/30 overflow-hidden flex flex-col items-center justify-center transition-all duration-500 hover:-translate-y-3 hover:bg-white/[0.11] hover:border-emerald-400/30"
+        >
+          <div
+            class="absolute w-32 h-32 bg-emerald-400/20 rounded-full blur-3xl group-hover:bg-emerald-400/30 transition-all duration-500"
+          ></div>
+
+          <span
+            class="relative z-10 text-xs uppercase tracking-[0.3em] text-slate-400 mb-4"
+          >
+            Counter 04
+          </span>
+
+          <h1
+            class="counter01 relative z-10 text-6xl font-black text-slate-300 transition-all duration-200 drop-shadow-lg"
+            data-number01="50"
+            data-speed01="100"
+          >
+            0
+          </h1>
+
+          <div
+            class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-40 group-hover:opacity-100 transition-all duration-500"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./toDo_06.js"></script>
+  </body>
+</html>
