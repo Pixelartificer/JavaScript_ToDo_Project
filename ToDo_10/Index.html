@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>3D Lottery Draw</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./Style.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body
+    class="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-purple-950 text-white"
+  >
+    <main
+      class="flex min-h-screen flex-col items-center justify-center px-5 py-10"
+    >
+      <!-- =========================
+           TITLE
+      ========================== -->
+
+      <div class="mb-14 text-center">
+        <div
+          class="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-purple-400/40 bg-purple-500/10 text-2xl shadow-lg shadow-purple-500/20"
+        >
+          ♛
+        </div>
+
+        <h1 class="text-4xl font-extrabold tracking-tight md:text-6xl">
+          3D LOTTERY DRAW
+        </h1>
+
+        <p
+          id="statusText"
+          class="mt-4 text-sm font-medium text-slate-400 md:text-base"
+        >
+          Lucky numbers are waiting...
+        </p>
+      </div>
+
+      <!-- =========================
+           LOTTERY BALLS
+      ========================== -->
+
+      <section id="lotteryContainer" class="lottery-container">
+        <!-- Ball 01 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">01</span>
+          </div>
+        </div>
+
+        <!-- Ball 02 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">02</span>
+          </div>
+        </div>
+
+        <!-- Ball 03 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">03</span>
+          </div>
+        </div>
+
+        <!-- Ball 04 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">04</span>
+          </div>
+        </div>
+
+        <!-- Ball 05 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">05</span>
+          </div>
+        </div>
+
+        <!-- Ball 06 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">06</span>
+          </div>
+        </div>
+
+        <!-- Ball 07 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">07</span>
+          </div>
+        </div>
+
+        <!-- Ball 08 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">08</span>
+          </div>
+        </div>
+
+        <!-- Ball 09 -->
+        <div class="lottery-ball">
+          <div class="ball-shine"></div>
+
+          <div class="ball-number">
+            <span class="number">09</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           START BUTTON
+      ========================== -->
+
+      <button
+        id="drawButton"
+        class="mt-14 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-12 py-4 text-sm font-bold uppercase tracking-widest shadow-xl shadow-purple-500/30 transition duration-300 hover:scale-105 hover:shadow-purple-500/50 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+      >
+        🎟 Start Draw
+      </button>
+
+      <!-- =========================
+           INFO
+      ========================== -->
+
+      <div
+        class="mt-14 flex flex-wrap items-center justify-center gap-8 text-center md:gap-16"
+      >
+        <div>
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Draw Interval
+          </p>
+
+          <p class="mt-1 font-semibold text-slate-200">2 Seconds</p>
+        </div>
+
+        <div class="hidden h-10 w-px bg-white/10 md:block"></div>
+
+        <div>
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Number Range
+          </p>
+
+          <p class="mt-1 font-semibold text-slate-200">01 - 99</p>
+        </div>
+
+        <div class="hidden h-10 w-px bg-white/10 md:block"></div>
+
+        <div>
+          <p class="text-xs uppercase tracking-widest text-slate-500">
+            Total Balls
+          </p>
+
+          <p class="mt-1 font-semibold text-slate-200">09</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScript -->
+    <script src="./toDo_09.js"></script>
+  </body>
+</html>

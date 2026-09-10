@@ -1,0 +1,344 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =================================
+   LOTTERY CONTAINER
+================================= */
+
+.lottery-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 14px;
+
+  perspective: 1200px;
+}
+
+
+/* =================================
+   3D LOTTERY BALL
+================================= */
+
+.lottery-ball {
+  position: relative;
+
+  width: 125px;
+  height: 125px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 30% 22%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.7) 5%,
+      rgba(255, 255, 255, 0.15) 18%,
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 70% 75%,
+      rgba(0, 0, 0, 0.45),
+      transparent 50%
+    ),
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #e8eaf5 25%,
+      #b9bcd0 48%,
+      #777b9c 72%,
+      #343750 100%
+    );
+
+  border: 3px solid rgba(255, 255, 255, 0.65);
+
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 20px rgba(129, 140, 248, 0.35);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* =================================
+   COLORFUL OUTER GLOW
+================================= */
+
+.lottery-ball:nth-child(1) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(59, 130, 246, 0.65);
+}
+
+.lottery-ball:nth-child(2) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(99, 102, 241, 0.65);
+}
+
+.lottery-ball:nth-child(3) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(168, 85, 247, 0.65);
+}
+
+.lottery-ball:nth-child(4) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(139, 92, 246, 0.65);
+}
+
+.lottery-ball:nth-child(5) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(192, 132, 252, 0.65);
+}
+
+.lottery-ball:nth-child(6) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(236, 72, 153, 0.65);
+}
+
+.lottery-ball:nth-child(7) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(244, 114, 182, 0.65);
+}
+
+.lottery-ball:nth-child(8) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(217, 70, 239, 0.65);
+}
+
+.lottery-ball:nth-child(9) {
+  box-shadow:
+    inset 10px 10px 18px rgba(255, 255, 255, 0.9),
+    inset -16px -18px 25px rgba(0, 0, 0, 0.38),
+    0 12px 25px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(244, 114, 182, 0.65);
+}
+
+
+/* =================================
+   NUMBER CIRCLE
+================================= */
+
+.ball-number {
+  width: 78px;
+  height: 78px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      #ffffff 0%,
+      #f4f4f8 35%,
+      #d2d3df 70%,
+      #999cad 100%
+    );
+
+  box-shadow:
+    inset 5px 5px 10px rgba(255, 255, 255, 0.95),
+    inset -7px -7px 13px rgba(0, 0, 0, 0.25),
+    0 5px 12px rgba(0, 0, 0, 0.25);
+
+  z-index: 2;
+}
+
+
+/* =================================
+   NUMBER
+================================= */
+
+.number {
+  color: #111827;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  font-variant-numeric: tabular-nums;
+
+  text-shadow:
+    1px 1px 0 rgba(255, 255, 255, 0.8);
+
+  transition: transform 0.1s ease;
+}
+
+
+/* =================================
+   SHINE
+================================= */
+
+.ball-shine {
+  position: absolute;
+
+  top: 18px;
+  left: 23px;
+
+  width: 38px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  filter: blur(5px);
+
+  transform: rotate(-25deg);
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   NUMBER RUNNING
+================================= */
+
+.lottery-ball.running .ball-number {
+  animation: numberPulse 0.12s linear infinite;
+}
+
+
+@keyframes numberPulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =================================
+   BALL STOPPED
+================================= */
+
+.lottery-ball.stopped {
+  animation: stopBall 0.6s ease;
+}
+
+
+@keyframes stopBall {
+
+  0% {
+    transform: scale(1);
+  }
+
+  35% {
+    transform: scale(1.12);
+  }
+
+  70% {
+    transform: scale(0.96);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+
+}
+
+
+/* =================================
+   STOPPED NUMBER
+================================= */
+
+.lottery-ball.stopped .ball-number {
+  box-shadow:
+    inset 5px 5px 10px rgba(255, 255, 255, 0.95),
+    inset -7px -7px 13px rgba(0, 0, 0, 0.25),
+    0 0 25px rgba(255, 255, 255, 0.65);
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1250px) {
+
+  .lottery-container {
+    overflow-x: auto;
+    justify-content: flex-start;
+
+    padding: 25px 20px 35px;
+
+    scrollbar-width: none;
+  }
+
+  .lottery-container::-webkit-scrollbar {
+    display: none;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .lottery-ball {
+    width: 95px;
+    height: 95px;
+  }
+
+  .ball-number {
+    width: 60px;
+    height: 60px;
+  }
+
+  .number {
+    font-size: 24px;
+  }
+
+}

@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Community Posts</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- =========================
+         GLASSMORPHISM & NATURE UI
+    ========================== -->
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        position: relative;
+        overflow-x: hidden;
+
+        background:
+          radial-gradient(
+            circle at 10% 15%,
+            rgba(20, 184, 166, 0.25),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 90% 20%,
+            rgba(16, 185, 129, 0.22),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 25% 85%,
+            rgba(59, 130, 246, 0.2),
+            transparent 30%
+          ),
+          radial-gradient(
+            circle at 75% 80%,
+            rgba(13, 148, 136, 0.25),
+            transparent 30%
+          ),
+          linear-gradient(
+            135deg,
+            #e6fffa 0%,
+            #f0fdf4 35%,
+            #f0f9ff 70%,
+            #e0f2fe 100%
+          );
+
+        background-attachment: fixed;
+      }
+
+      /* Blurred background lights */
+      body::before {
+        content: "";
+        position: fixed;
+        width: 420px;
+        height: 420px;
+        left: -180px;
+        top: -120px;
+        border-radius: 50%;
+        background: rgba(13, 148, 136, 0.25);
+        filter: blur(80px);
+        z-index: -20;
+        pointer-events: none;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        width: 480px;
+        height: 480px;
+        right: -200px;
+        bottom: -150px;
+        border-radius: 50%;
+        background: rgba(16, 185, 129, 0.22);
+        filter: blur(90px);
+        z-index: -20;
+        pointer-events: none;
+      }
+
+      /* HEADER GLASS */
+      header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.65),
+          rgba(255, 255, 255, 0.3)
+        ) !important;
+
+        backdrop-filter: blur(24px) saturate(160%);
+        -webkit-backdrop-filter: blur(24px) saturate(160%);
+
+        box-shadow:
+          0 8px 35px rgba(13, 148, 136, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      }
+
+      /* CREATE POST GLASS */
+      main > section:first-child {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.7),
+          rgba(255, 255, 255, 0.35)
+        ) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
+
+        backdrop-filter: blur(28px) saturate(170%);
+        -webkit-backdrop-filter: blur(28px) saturate(170%);
+
+        box-shadow:
+          0 25px 70px rgba(13, 148, 136, 0.1),
+          0 8px 30px rgba(16, 185, 129, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+        position: relative;
+      }
+
+      /* INPUT GLASS */
+      #nameInput,
+      #postText,
+      #searchInput {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.25)
+        ) !important;
+
+        border: 1px solid rgba(204, 251, 241, 0.8) !important;
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.8),
+          0 5px 20px rgba(13, 148, 136, 0.03);
+
+        color: #0f172a;
+      }
+
+      #nameInput::placeholder,
+      #postText::placeholder,
+      #searchInput::placeholder {
+        color: rgba(71, 85, 105, 0.6);
+      }
+
+      #nameInput:focus,
+      #postText:focus,
+      #searchInput:focus {
+        background: rgba(255, 255, 255, 0.8) !important;
+
+        border-color: rgba(13, 148, 136, 0.6) !important;
+
+        box-shadow:
+          0 0 0 4px rgba(13, 148, 136, 0.12),
+          0 10px 30px rgba(13, 148, 136, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      /* OPTION BUTTONS */
+      #photoBtn,
+      #videoBtn,
+      #emojiBtn,
+      #locationBtn,
+      #linkBtn {
+        position: relative;
+        overflow: hidden;
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.35)
+        ) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
+
+        backdrop-filter: blur(18px);
+
+        box-shadow:
+          0 8px 25px rgba(13, 148, 136, 0.05),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+        transition: all 0.3s ease;
+      }
+
+      #photoBtn:hover,
+      #videoBtn:hover,
+      #emojiBtn:hover,
+      #locationBtn:hover,
+      #linkBtn:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+          0 12px 30px rgba(13, 148, 136, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 1);
+      }
+
+      /* POST BUTTON */
+      #postBtn {
+        position: relative;
+        overflow: hidden;
+
+        background: linear-gradient(
+          100deg,
+          #0d9488 0%,
+          #10b981 50%,
+          #0284c7 100%
+        ) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.5);
+
+        box-shadow:
+          0 12px 35px rgba(13, 148, 136, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      }
+
+      /* RECENT POSTS AREA */
+      #postsSection {
+        position: relative;
+
+        padding: 22px;
+
+        border-radius: 30px;
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.3)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.75);
+
+        backdrop-filter: blur(28px) saturate(170%);
+
+        box-shadow:
+          0 25px 70px rgba(13, 148, 136, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      /* POST CARD GLASS */
+      #postsContainer > * {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.65),
+          rgba(255, 255, 255, 0.3)
+        ) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.8) !important;
+
+        backdrop-filter: blur(24px);
+
+        box-shadow:
+          0 15px 40px rgba(13, 148, 136, 0.06),
+          inset 0 1px 0 rgba(255, 255, 255, 0.85);
+
+        transition: all 0.3s ease;
+      }
+
+      #postsContainer > *:hover {
+        transform: translateY(-2px);
+
+        box-shadow:
+          0 20px 50px rgba(13, 148, 136, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      }
+
+      /* EMPTY POST ICON */
+      #postsContainer:empty::before {
+        content: "🍃";
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+
+        border-radius: 50%;
+
+        font-size: 42px;
+
+        color: #0d9488;
+
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.3)
+        );
+
+        border: 1px solid rgba(255, 255, 255, 0.8);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow:
+          0 15px 40px rgba(13, 148, 136, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      }
+
+      /* POST COUNT BADGE */
+      #postCount {
+        background: linear-gradient(
+          135deg,
+          rgba(13, 148, 136, 0.85),
+          rgba(16, 185, 129, 0.85)
+        ) !important;
+
+        color: white !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.45);
+
+        backdrop-filter: blur(15px);
+
+        box-shadow:
+          0 8px 25px rgba(13, 148, 136, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.4);
+      }
+
+      @media (max-width: 640px) {
+        main {
+          padding-top: 24px !important;
+        }
+
+        #postsSection {
+          padding: 16px;
+          border-radius: 24px;
+        }
+
+        main > section:first-child {
+          border-radius: 24px !important;
+        }
+
+        #photoBtn,
+        #videoBtn,
+        #emojiBtn,
+        #locationBtn,
+        #linkBtn {
+          flex: 1 1 calc(50% - 8px);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen font-[Poppins] text-slate-800">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl">
+      <div class="mx-auto flex max-w-4xl items-center justify-between px-4 py-4">
+        <div>
+          <h1 class="bg-gradient-to-r from-teal-700 via-emerald-600 to-sky-600 bg-clip-text text-xl font-bold text-transparent">
+            🌱 Community Hub
+          </h1>
+          <p class="text-xs text-slate-500">Share your thoughts & ideas</p>
+        </div>
+
+        <button
+          type="button"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-white/60 bg-gradient-to-br from-teal-100 to-emerald-100 text-lg shadow-sm transition duration-300 hover:scale-105 hover:shadow-md"
+        >
+          🔔
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="mx-auto max-w-4xl px-4 py-8">
+      <!-- Create Post Section -->
+      <section class="relative overflow-hidden rounded-3xl border border-white/70 bg-white/80 p-5 shadow-xl backdrop-blur-xl">
+        <!-- Top Gradient Bar -->
+        <div class="absolute left-0 right-0 top-0 h-1.5 bg-gradient-to-r from-teal-500 via-emerald-500 to-sky-500"></div>
+
+        <div class="mb-5 flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-lg shadow-teal-200">
+            🌿
+          </div>
+          <div>
+            <h2 class="text-lg font-semibold text-slate-900">Create Post</h2>
+            <p class="text-xs text-slate-500">What's on your mind today?</p>
+          </div>
+        </div>
+
+        <!-- Name Input -->
+        <input
+          id="nameInput"
+          type="text"
+          placeholder="Your name"
+          class="mb-4 w-full rounded-xl border px-4 py-3 outline-none transition duration-300"
+        />
+
+        <!-- Post Content Input -->
+        <textarea
+          id="postText"
+          rows="4"
+          placeholder="Write your post here..."
+          class="w-full resize-none rounded-xl border px-4 py-3 outline-none transition duration-300"
+        ></textarea>
+
+        <!-- File Preview -->
+        <div id="filePreview" class="mt-3 hidden overflow-hidden rounded-xl border border-slate-200"></div>
+
+        <!-- Post Options -->
+        <div class="mt-5 flex flex-wrap gap-2">
+          <button
+            id="photoBtn"
+            type="button"
+            class="rounded-xl border border-teal-100 bg-gradient-to-r from-teal-50 to-emerald-50 px-4 py-2 text-sm font-medium text-teal-800 transition hover:-translate-y-0.5"
+          >
+            📷 Photo
+          </button>
+
+          <button
+            id="videoBtn"
+            type="button"
+            class="rounded-xl border border-emerald-100 bg-gradient-to-r from-emerald-50 to-green-50 px-4 py-2 text-sm font-medium text-emerald-800 transition hover:-translate-y-0.5"
+          >
+            🎥 Video
+          </button>
+
+          <button
+            id="emojiBtn"
+            type="button"
+            class="rounded-xl border border-amber-100 bg-gradient-to-r from-amber-50 to-yellow-50 px-4 py-2 text-sm font-medium text-amber-800 transition hover:-translate-y-0.5"
+          >
+            😊 Feeling
+          </button>
+
+          <button
+            id="locationBtn"
+            type="button"
+            class="rounded-xl border border-sky-100 bg-gradient-to-r from-sky-50 to-blue-50 px-4 py-2 text-sm font-medium text-sky-800 transition hover:-translate-y-0.5"
+          >
+            📍 Location
+          </button>
+
+          <button
+            id="linkBtn"
+            type="button"
+            class="rounded-xl border border-indigo-100 bg-gradient-to-r from-indigo-50 to-slate-50 px-4 py-2 text-sm font-medium text-indigo-800 transition hover:-translate-y-0.5"
+          >
+            🔗 Link
+          </button>
+        </div>
+
+        <!-- Submit Post Button -->
+        <button
+          id="postBtn"
+          type="button"
+          class="mt-5 w-full rounded-xl py-3 font-semibold text-white shadow-lg transition duration-300 hover:-translate-y-0.5 active:scale-[0.98]"
+        >
+          🌿 Publish Post
+        </button>
+      </section>
+
+      <!-- Recent Posts Section -->
+      <section id="postsSection" class="mt-10">
+        <!-- Header & Searchbar Container -->
+        <div class="mb-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-lg font-semibold text-slate-900">Recent Posts</h2>
+              <p class="text-xs text-slate-500">Latest community activity</p>
+            </div>
+            <span
+              id="postCount"
+              class="rounded-full px-4 py-1.5 text-xs font-semibold shadow-sm"
+            >
+              0 Posts
+            </span>
+          </div>
+
+          <!-- NEW SEARCH BAR -->
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
+              🔍
+            </span>
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search posts by author's name..."
+              class="w-full rounded-2xl border py-2.5 pl-10 pr-4 text-sm outline-none transition duration-300"
+            />
+          </div>
+        </div>
+
+        <!-- Dynamic Posts Container -->
+        <div id="postsContainer" class="space-y-5"></div>
+      </section>
+    </main>
+
+    <!-- JavaScript Source -->
+    <script src="./toDo_09.js"></script>
+  </body>
+</html>
