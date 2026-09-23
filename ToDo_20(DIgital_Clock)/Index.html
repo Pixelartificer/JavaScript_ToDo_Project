@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My First Digital Clock</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+              orbitron: ["Orbitron", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background:
+          radial-gradient(
+            circle at 15% 20%,
+            rgba(168, 85, 247, 0.2),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 85% 75%,
+            rgba(139, 92, 246, 0.18),
+            transparent 32%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(88, 28, 135, 0.1),
+            transparent 45%
+          ),
+          #07020d;
+      }
+
+      .clockHeading {
+        font-size: 48px;
+        line-height: 1.3;
+        padding-bottom: 5px;
+      }
+      @media (min-width: 640px) {
+        .clockHeading {
+          font-size: 56px;
+        }
+      }
+      @media (min-width: 768px) {
+        .clockHeading {
+          font-size: 60px;
+        }
+      }
+      @media (min-width: 1024px) {
+        .clockHeading {
+          font-size: 64px;
+        }
+      }
+
+      .glassCard {
+        position: relative;
+        background: linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.09),
+          rgba(255, 255, 255, 0.025)
+        );
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow:
+          0 35px 90px rgba(0, 0, 0, 0.55),
+          inset 0 1px 1px rgba(255, 255, 255, 0.12),
+          inset 0 -1px 1px rgba(0, 0, 0, 0.35);
+      }
+
+      .clockCircle {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        transform: rotate(90deg);
+        flex-shrink: 0;
+        background:
+          radial-gradient(
+            circle at 35% 30%,
+            rgba(255, 255, 255, 0.09),
+            transparent 25%
+          ),
+          radial-gradient(circle, rgba(30, 10, 50, 0.95), rgba(8, 2, 15, 1));
+        box-shadow:
+          20px 20px 40px rgba(0, 0, 0, 0.55),
+          -8px -8px 20px rgba(255, 255, 255, 0.035),
+          inset 8px 8px 18px rgba(0, 0, 0, 0.75),
+          inset -6px -6px 15px rgba(255, 255, 255, 0.055);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .clockCircle::before {
+        content: "";
+        position: absolute;
+        inset: -20px;
+        border-radius: 50%;
+        box-shadow:
+          25px 25px 75px rgba(0, 0, 0, 0.5),
+          10px 10px 70px rgba(0, 0, 0, 0.4),
+          inset 5px 5px 10px rgba(0, 0, 0, 0.65),
+          inset 5px 5px 20px rgba(255, 255, 255, 0.08),
+          inset -5px -5px 15px rgba(0, 0, 0, 0.85);
+        border: 1px solid rgba(168, 85, 247, 0.08);
+      }
+
+      .clockTitle {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transform: rotate(-90deg);
+        color: var(--clockColor);
+        font-family: "Orbitron", sans-serif;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        z-index: 2;
+        text-shadow:
+          1px 1px 0 rgba(0, 0, 0, 0.8),
+          2px 2px 0 rgba(0, 0, 0, 0.7),
+          3px 3px 0 rgba(0, 0, 0, 0.6),
+          0 0 8px var(--clockColor),
+          0 0 18px var(--clockColor),
+          0 0 35px var(--clockColor);
+      }
+
+      .clockTitle span {
+        position: absolute;
+        bottom: 47px;
+        font-family: "Poppins", sans-serif;
+        font-size: 12.32px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.22em;
+        opacity: 0.8;
+        text-shadow: 0 0 8px var(--clockColor);
+      }
+
+      .amPmText {
+        position: absolute;
+        color: #ffffff;
+        display: inline-flex;
+        transform: rotate(-90deg) translate(-30px, 90px);
+        z-index: 3;
+        font-family: "Orbitron", sans-serif;
+        font-size: 12px;
+        letter-spacing: 0.15em;
+        text-shadow:
+          0 0 8px #ffffff,
+          0 0 15px var(--clockColor);
+      }
+
+      .clockDot {
+        position: absolute;
+        top: 50%;
+        width: 10px;
+        height: 3px;
+        background: var(--clockColor);
+        transform-origin: 100px;
+        z-index: 1;
+        border-radius: 10px;
+        box-shadow: 0 0 2px var(--clockColor);
+      }
+
+      .clockDot.active {
+        background: var(--clockColor);
+        box-shadow:
+          0 0 7px var(--clockColor),
+          0 0 15px var(--clockColor),
+          0 0 25px var(--clockColor),
+          0 0 40px var(--clockColor);
+      }
+
+      .clockDot.active ~ .clockDot {
+        background: #3b3044;
+        box-shadow: none;
+      }
+
+      .minuteDot:nth-child(5n + 5),
+      .secondDot:nth-child(5n + 5) {
+        width: 20px;
+      }
+
+      .hourDot::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--clockColor);
+        box-shadow:
+          1.5px 9px var(--clockColor),
+          4px 18px var(--clockColor),
+          7px 27px var(--clockColor);
+        filter: drop-shadow(0 0 3px var(--clockColor));
+      }
+
+      .hourDot.active ~ .hourDot::before {
+        background: #3b3044;
+        box-shadow:
+          1.5px 9px #3b3044,
+          4px 18px #3b3044,
+          7px 27px #3b3044;
+        filter: none;
+      }
+
+      @media (max-width: 1100px) {
+        .clockContainer {
+          gap: 55px !important;
+        }
+
+        .clockCircle {
+          width: 180px;
+          height: 180px;
+        }
+
+        .clockDot {
+          transform-origin: 90px;
+        }
+
+        .clockTitle {
+          font-size: 49.6px;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .clockContainer {
+          flex-direction: column !important;
+          gap: 75px !important;
+        }
+
+        .clockCircle {
+          width: 180px;
+          height: 180px;
+        }
+
+        .clockDot {
+          transform-origin: 90px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .clockCircle {
+          width: 160px;
+          height: 160px;
+        }
+
+        .clockDot {
+          transform-origin: 80px;
+        }
+
+        .clockTitle {
+          font-size: 43.2px;
+        }
+
+        .clockTitle span {
+          bottom: 40px;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen text-white font-poppins">
+    <main class="min-h-screen flex items-center justify-center px-5 py-10">
+      <section class="w-full max-w-[1250px]">
+        <div class="text-center mb-12">
+          <div
+            class="inline-block px-5 py-2 mb-5 rounded-full border border-purple-400/20 bg-purple-500/10 text-purple-300 text-xs sm:text-sm tracking-[4px] uppercase"
+          >
+            Digital Time
+          </div>
+          <h1
+            class="font-semibold tracking-tight bg-gradient-to-r from-purple-200 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent clockHeading"
+          >
+            My First Digital Clock
+          </h1>
+          <p
+            id="calendarDate"
+            class="mt-5 text-lg sm:text-xl text-purple-200/90 tracking-[4px] font-orbitron"
+          >
+            23 : 09 : 2026
+          </p>
+          <p
+            id="calendarDay"
+            class="mt-4 text-[16px] font-bold sm:text-[24px] text-white/40 uppercase tracking-[6px]"
+          >
+            Wednesday
+          </p>
+        </div>
+        <div
+          class="glassCard rounded-[40px] px-6 py-16 sm:px-10 md:px-16 overflow-hidden"
+        >
+          <div
+            id="clockContainer"
+            class="clockContainer flex flex-row justify-center items-center gap-[80px]"
+          >
+            <div
+              id="hourDots"
+              class="clockCircle"
+              style="--clockColor: #c084fc"
+            ></div>
+            <div
+              id="minuteDots"
+              class="clockCircle"
+              style="--clockColor: #e879f9"
+            ></div>
+            <div
+              id="secondDots"
+              class="clockCircle"
+              style="--clockColor: #a78bfa"
+            ></div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10">
+          <button
+            id="clockModeButton"
+            type="button"
+            class="group relative overflow-hidden px-8 py-4 rounded-2xl border border-purple-400/30 bg-purple-500/10 backdrop-blur-xl text-purple-100 font-medium tracking-wide shadow-[0_0_25px_rgba(168,85,247,0.30)] hover:bg-purple-500/20 hover:border-purple-400/60 hover:shadow-[0_0_40px_rgba(168,85,247,0.45)] active:scale-95 transition-all duration-300"
+          >
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-transparent via-purple-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"
+            ></span>
+            <span
+              id="clockModeText"
+              class="relative z-10 font-orbitron text-xs sm:text-sm"
+            >
+              Switch to 24 Hour
+            </span>
+          </button>
+        </div>
+        <p
+          class="text-center mt-8 text-[10px] sm:text-xs text-white/25 tracking-[0.2em]"
+        >
+          HOURS • MINUTES • SECONDS
+        </p>
+      </section>
+    </main>
+
+    <script src="./toDo_09.js"></script>
+  </body>
+</html>
