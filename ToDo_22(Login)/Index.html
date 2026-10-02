@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neumorphic 3D Flip Login & Register</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Custom Configuration for Spin Animation -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'spin-slow': 'spin 4s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="min-h-screen flex items-center justify-center bg-[#e0e5ec] p-4 overflow-hidden">
+
+  <!-- Outer Container with Perspective for 3D Effect -->
+  <div class="relative w-[440px] h-[440px] sm:w-[500px] sm:h-[500px] flex items-center justify-center [perspective:1000px]">
+    
+    <!-- Rotating Animated Rainbow Border Ring -->
+    <div class="absolute inset-0 rounded-full bg-[conic-gradient(#ff0055,#7000ff,#00e5ff,#00ff66,#ffdd00,#ff0055)] animate-spin-slow blur-[3px]"></div>
+    
+    <!-- 3D Flipping Card Container -->
+    <div id="cardInner" class="relative w-[420px] h-[420px] sm:w-[480px] sm:h-[480px] rounded-full transition-transform duration-700 [transform-style:preserve-3d]">
+      
+      <!-- FRONT SIDE: LOGIN FORM -->
+      <div class="absolute inset-0 w-full h-full rounded-full bg-[#e0e5ec] [box-shadow:inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex flex-col items-center justify-center p-8 text-slate-600 [backface-visibility:hidden]">
+        
+        <!-- Top Group Icon -->
+        <div class="text-blue-500 text-4xl mb-2">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+
+        <div class="w-full max-w-[300px] flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-gray-700 mb-1">Welcome Back</h2>
+          <p class="text-xs text-gray-400 mb-5">Please login to continue</p>
+
+          <!-- Username Input -->
+          <div class="w-full bg-[#e0e5ec] [box-shadow:inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-full flex items-center px-5 py-3 mb-4">
+            <i class="fa-solid fa-user text-gray-400 text-base mr-3"></i>
+            <input type="text" placeholder="Username" class="bg-transparent border-none outline-none text-sm w-full text-gray-700">
+          </div>
+
+          <!-- Password Input -->
+          <div class="w-full bg-[#e0e5ec] [box-shadow:inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-full flex items-center px-5 py-3 mb-3">
+            <i class="fa-solid fa-lock text-gray-400 text-base mr-3"></i>
+            <input type="password" id="loginPassword" placeholder="Password" class="bg-transparent border-none outline-none text-sm w-full text-gray-700">
+            <i class="fa-solid fa-eye text-gray-400 text-sm cursor-pointer ml-2" onclick="togglePassword('loginPassword', this)"></i>
+          </div>
+
+          <!-- Remember Me & Forgot Password -->
+          <div class="w-full flex justify-between items-center text-xs text-gray-400 mb-5 px-2">
+            <label class="flex items-center cursor-pointer">
+              <input type="checkbox" class="mr-1.5 accent-blue-500"> Remember me
+            </label>
+            <a href="#" class="hover:underline">Forgot?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button class="w-full bg-[#e0e5ec] [box-shadow:5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] active:[box-shadow:inset_3px_3px_6px_#bebebe,inset_-3px_-3px_6px_#ffffff] active:scale-[0.98] transition-all duration-200 py-3 rounded-full text-sm font-semibold text-blue-600 flex items-center justify-center gap-2 hover:text-blue-700">
+            LOGIN <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <!-- Switch to Register -->
+          <p class="text-xs text-gray-400 mt-4">
+            Don't have an account? 
+            <button onclick="flipCard()" class="text-blue-500 font-semibold hover:underline">Register</button>
+          </p>
+        </div>
+      </div>
+
+
+      <!-- BACK SIDE: REGISTER FORM -->
+      <div class="absolute inset-0 w-full h-full rounded-full bg-[#e0e5ec] [box-shadow:inset_10px_10px_20px_#bebebe,inset_-10px_-10px_20px_#ffffff] flex flex-col items-center justify-center p-8 text-slate-600 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        
+        <!-- Top Group Icon -->
+        <div class="text-blue-500 text-4xl mb-2">
+          <i class="fa-solid fa-user-group"></i>
+        </div>
+
+        <div class="w-full max-w-[300px] flex flex-col items-center">
+          <h2 class="text-2xl font-bold text-gray-700 mb-1">Create Account</h2>
+          <p class="text-xs text-gray-400 mb-4">Join us today</p>
+
+          <!-- Username Input -->
+          <div class="w-full bg-[#e0e5ec] [box-shadow:inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-full flex items-center px-5 py-2.5 mb-3">
+            <i class="fa-solid fa-user text-gray-400 text-base mr-3"></i>
+            <input type="text" placeholder="Username" class="bg-transparent border-none outline-none text-sm w-full text-gray-700">
+          </div>
+
+          <!-- Email Input -->
+          <div class="w-full bg-[#e0e5ec] [box-shadow:inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-full flex items-center px-5 py-2.5 mb-3">
+            <i class="fa-solid fa-envelope text-gray-400 text-base mr-3"></i>
+            <input type="email" placeholder="Email" class="bg-transparent border-none outline-none text-sm w-full text-gray-700">
+          </div>
+
+          <!-- Password Input -->
+          <div class="w-full bg-[#e0e5ec] [box-shadow:inset_4px_4px_8px_#bebebe,inset_-4px_-4px_8px_#ffffff] rounded-full flex items-center px-5 py-2.5 mb-4">
+            <i class="fa-solid fa-lock text-gray-400 text-base mr-3"></i>
+            <input type="password" id="regPassword" placeholder="Password" class="bg-transparent border-none outline-none text-sm w-full text-gray-700">
+            <i class="fa-solid fa-eye text-gray-400 text-sm cursor-pointer ml-2" onclick="togglePassword('regPassword', this)"></i>
+          </div>
+
+          <!-- Submit Button -->
+          <button class="w-full bg-[#e0e5ec] [box-shadow:5px_5px_10px_#bebebe,-5px_-5px_10px_#ffffff] active:[box-shadow:inset_3px_3px_6px_#bebebe,inset_-3px_-3px_6px_#ffffff] active:scale-[0.98] transition-all duration-200 py-3 rounded-full text-sm font-semibold text-blue-600 flex items-center justify-center gap-2 hover:text-blue-700">
+            REGISTER <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <!-- Switch to Login -->
+          <p class="text-xs text-gray-400 mt-4">
+            Already have an account? 
+            <button onclick="flipCard()" class="text-blue-500 font-semibold hover:underline">Login</button>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
+  <script src="./toDo_09.js"></script>
+</body>
+</html>

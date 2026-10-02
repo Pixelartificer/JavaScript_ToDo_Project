@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "scale-95",
     "opacity-0",
     "transition-all",
-    "duration-200"
+    "duration-200",
   );
 
   modalOverlay.appendChild(modalBox);
@@ -152,59 +152,188 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const emojiGroups = {
     "😀 Smileys": [
-      "😀", "😃", "😄", "😁", "😆",
-      "😅", "😂", "🤣", "😊", "😇",
-      "🙂", "🙃", "😉", "😍", "🥰",
-      "😘", "😎", "🤩", "🥳", "😏",
-      "😒", "😔", "😢", "😭", "😡",
-      "🤯", "😱", "🥵", "🥶", "🤔"
+      "😀",
+      "😃",
+      "😄",
+      "😁",
+      "😆",
+      "😅",
+      "😂",
+      "🤣",
+      "😊",
+      "😇",
+      "🙂",
+      "🙃",
+      "😉",
+      "😍",
+      "🥰",
+      "😘",
+      "😎",
+      "🤩",
+      "🥳",
+      "😏",
+      "😒",
+      "😔",
+      "😢",
+      "😭",
+      "😡",
+      "🤯",
+      "😱",
+      "🥵",
+      "🥶",
+      "🤔",
     ],
 
     "❤️ Hearts": [
-      "❤️", "🧡", "💛", "💚", "💙",
-      "💜", "🖤", "🤍", "🤎", "💔",
-      "💕", "💞", "💓", "💗", "💖",
-      "💘", "💝", "💯", "💋", "✨",
-      "🌟", "⭐", "💫", "🔥"
+      "❤️",
+      "🧡",
+      "💛",
+      "💚",
+      "💙",
+      "💜",
+      "🖤",
+      "🤍",
+      "🤎",
+      "💔",
+      "💕",
+      "💞",
+      "💓",
+      "💗",
+      "💖",
+      "💘",
+      "💝",
+      "💯",
+      "💋",
+      "✨",
+      "🌟",
+      "⭐",
+      "💫",
+      "🔥",
     ],
 
     "👍 Gestures": [
-      "👍", "👎", "👌", "✌️", "🤞",
-      "🤟", "🤘", "🤙", "👈", "👉",
-      "👆", "👇", "☝️", "✋", "🖐️",
-      "👏", "🙌", "🙏", "💪", "👀",
-      "👋", "🤝"
+      "👍",
+      "👎",
+      "👌",
+      "✌️",
+      "🤞",
+      "🤟",
+      "🤘",
+      "🤙",
+      "👈",
+      "👉",
+      "👆",
+      "👇",
+      "☝️",
+      "✋",
+      "🖐️",
+      "👏",
+      "🙌",
+      "🙏",
+      "💪",
+      "👀",
+      "👋",
+      "🤝",
     ],
 
     "🌸 Nature": [
-      "🌸", "🌹", "🌺", "🌻", "🌼",
-      "🌷", "🌱", "🌿", "🍀", "🌳",
-      "🌴", "🌵", "🌈", "☀️", "🌤️",
-      "🌧️", "❄️", "🌙", "🌎", "🌍",
-      "⭐", "🔥", "💧"
+      "🌸",
+      "🌹",
+      "🌺",
+      "🌻",
+      "🌼",
+      "🌷",
+      "🌱",
+      "🌿",
+      "🍀",
+      "🌳",
+      "🌴",
+      "🌵",
+      "🌈",
+      "☀️",
+      "🌤️",
+      "🌧️",
+      "❄️",
+      "🌙",
+      "🌎",
+      "🌍",
+      "⭐",
+      "🔥",
+      "💧",
     ],
 
     "🍔 Food": [
-      "🍎", "🍊", "🍋", "🍉", "🍇",
-      "🍓", "🍒", "🍑", "🍍", "🥭",
-      "🍌", "🥝", "🍕", "🍔", "🍟",
-      "🌭", "🌮", "🍿", "🍩", "🍪",
-      "🎂", "🍰", "🍫", "☕"
+      "🍎",
+      "🍊",
+      "🍋",
+      "🍉",
+      "🍇",
+      "🍓",
+      "🍒",
+      "🍑",
+      "🍍",
+      "🥭",
+      "🍌",
+      "🥝",
+      "🍕",
+      "🍔",
+      "🍟",
+      "🌭",
+      "🌮",
+      "🍿",
+      "🍩",
+      "🍪",
+      "🎂",
+      "🍰",
+      "🍫",
+      "☕",
     ],
 
     "⚽ Activities": [
-      "⚽", "🏀", "🏈", "⚾", "🎾",
-      "🏐", "🏆", "🥇", "🥈", "🥉",
-      "🎮", "🎯", "🎸", "🎹", "🎤",
-      "🎧", "🎨", "🎬", "🎭", "🎉"
+      "⚽",
+      "🏀",
+      "🏈",
+      "⚾",
+      "🎾",
+      "🏐",
+      "🏆",
+      "🥇",
+      "🥈",
+      "🥉",
+      "🎮",
+      "🎯",
+      "🎸",
+      "🎹",
+      "🎤",
+      "🎧",
+      "🎨",
+      "🎬",
+      "🎭",
+      "🎉",
     ],
 
     "✈️ Travel": [
-      "✈️", "🚗", "🚕", "🚌", "🚆",
-      "🚇", "🚲", "🏍️", "🚢", "⛵",
-      "🚀", "🏠", "🏢", "🏫", "🏥",
-      "🏖️", "🏝️", "🏔️", "🗼", "🗽"
-    ]
+      "✈️",
+      "🚗",
+      "🚕",
+      "🚌",
+      "🚆",
+      "🚇",
+      "🚲",
+      "🏍️",
+      "🚢",
+      "⛵",
+      "🚀",
+      "🏠",
+      "🏢",
+      "🏫",
+      "🏥",
+      "🏖️",
+      "🏝️",
+      "🏔️",
+      "🗼",
+      "🗽",
+    ],
   };
 
   // ==============================
@@ -243,13 +372,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "Choose a feeling"
+      "Choose a feeling",
     );
 
     const subtitle = createElement(
       "p",
       "text-xs text-slate-500",
-      "Pick an emoji to add to your post"
+      "Pick an emoji to add to your post",
     );
 
     titleBox.appendChild(title);
@@ -258,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = createElement(
       "button",
       "flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200",
-      "✕"
+      "✕",
     );
 
     closeBtn.type = "button";
@@ -271,8 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const categoryBar = document.createElement("div");
 
-    categoryBar.className =
-      "mb-4 flex gap-2 overflow-x-auto pb-2";
+    categoryBar.className = "mb-4 flex gap-2 overflow-x-auto pb-2";
 
     const emojiGrid = document.createElement("div");
 
@@ -304,47 +432,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const categoryButton = createElement(
         "button",
         "emoji-category shrink-0 rounded-full px-3 py-2 text-xs font-semibold transition",
-        groupName
+        groupName,
       );
 
       categoryButton.type = "button";
 
       if (index === 0) {
-        categoryButton.classList.add(
-          "bg-teal-600",
-          "text-white"
-        );
+        categoryButton.classList.add("bg-teal-600", "text-white");
       } else {
-        categoryButton.classList.add(
-          "bg-slate-100",
-          "text-slate-600"
-        );
+        categoryButton.classList.add("bg-slate-100", "text-slate-600");
       }
 
       categoryButton.addEventListener("click", () => {
-        document
-          .querySelectorAll(".emoji-category")
-          .forEach((button) => {
-            button.classList.remove(
-              "bg-teal-600",
-              "text-white"
-            );
+        document.querySelectorAll(".emoji-category").forEach((button) => {
+          button.classList.remove("bg-teal-600", "text-white");
 
-            button.classList.add(
-              "bg-slate-100",
-              "text-slate-600"
-            );
-          });
+          button.classList.add("bg-slate-100", "text-slate-600");
+        });
 
-        categoryButton.classList.remove(
-          "bg-slate-100",
-          "text-slate-600"
-        );
+        categoryButton.classList.remove("bg-slate-100", "text-slate-600");
 
-        categoryButton.classList.add(
-          "bg-teal-600",
-          "text-white"
-        );
+        categoryButton.classList.add("bg-teal-600", "text-white");
 
         renderEmojiGroup(groupName);
       });
@@ -418,7 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const removeBtn = createElement(
       "button",
       "absolute right-2 top-2 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/60 text-white hover:bg-red-500",
-      "✕"
+      "✕",
     );
 
     removeBtn.type = "button";
@@ -440,8 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image.src = URL.createObjectURL(file);
       image.alt = "Selected image";
 
-      image.className =
-        "max-h-80 w-full object-cover";
+      image.className = "max-h-80 w-full object-cover";
 
       wrapper.appendChild(image);
     }
@@ -452,8 +559,7 @@ document.addEventListener("DOMContentLoaded", () => {
       video.src = URL.createObjectURL(file);
       video.controls = true;
 
-      video.className =
-        "max-h-80 w-full object-cover";
+      video.className = "max-h-80 w-full object-cover";
 
       wrapper.appendChild(video);
     }
@@ -475,21 +581,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "📍 Add Location"
+      "📍 Add Location",
     );
 
     const subtitle = createElement(
       "p",
       "mt-1 text-xs text-slate-500",
-      "Type a location or use your current location"
+      "Type a location or use your current location",
     );
 
     const locationInput = document.createElement("input");
 
     locationInput.type = "text";
 
-    locationInput.placeholder =
-      "Search or type a location...";
+    locationInput.placeholder = "Search or type a location...";
 
     locationInput.className =
       "mt-4 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-teal-400 focus:ring-4 focus:ring-teal-100";
@@ -497,7 +602,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentLocationBtn = createElement(
       "button",
       "mt-3 w-full rounded-2xl bg-teal-50 p-3 text-left font-semibold text-teal-700 hover:bg-teal-100",
-      "📍 Use my current location"
+      "📍 Use my current location",
     );
 
     const buttons = document.createElement("div");
@@ -507,13 +612,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-slate-100 py-3 font-semibold text-slate-600",
-      "Cancel"
+      "Cancel",
     );
 
     const addBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-600 py-3 font-semibold text-white",
-      "Add Location"
+      "Add Location",
     );
 
     cancelBtn.type = "button";
@@ -527,32 +632,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const latitude =
-            position.coords.latitude.toFixed(5);
+          const latitude = position.coords.latitude.toFixed(5);
 
-          const longitude =
-            position.coords.longitude.toFixed(5);
+          const longitude = position.coords.longitude.toFixed(5);
 
-          insertAtCursor(
-            `📍 Location: ${latitude}, ${longitude}`
-          );
+          insertAtCursor(`📍 Location: ${latitude}, ${longitude}`);
 
           closeModal();
         },
 
         () => {
           showMessage(
-            "Location permission was denied. Please type your location."
+            "Location permission was denied. Please type your location.",
           );
-        }
+        },
       );
     });
 
     cancelBtn.addEventListener("click", closeModal);
 
     addBtn.addEventListener("click", () => {
-      const location =
-        locationInput.value.trim();
+      const location = locationInput.value.trim();
 
       if (!location) {
         locationInput.focus();
@@ -588,15 +688,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "🔗 Add Link"
+      "🔗 Add Link",
     );
 
     const urlInput = document.createElement("input");
 
     urlInput.type = "url";
 
-    urlInput.placeholder =
-      "https://example.com";
+    urlInput.placeholder = "https://example.com";
 
     urlInput.className =
       "mt-4 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100";
@@ -605,8 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     titleInput.type = "text";
 
-    titleInput.placeholder =
-      "Link title (optional)";
+    titleInput.placeholder = "Link title (optional)";
 
     titleInput.className =
       "mt-3 w-full rounded-2xl border border-slate-200 px-4 py-3 outline-none focus:border-cyan-400 focus:ring-4 focus:ring-cyan-100";
@@ -618,13 +716,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const cancelBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-slate-100 py-3 font-semibold text-slate-600",
-      "Cancel"
+      "Cancel",
     );
 
     const addBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 py-3 font-semibold text-white",
-      "Add Link"
+      "Add Link",
     );
 
     cancelBtn.type = "button";
@@ -651,12 +749,9 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const linkTitle =
-        titleInput.value.trim() || "Open Link";
+      const linkTitle = titleInput.value.trim() || "Open Link";
 
-      insertAtCursor(
-        `🔗 ${linkTitle}: ${url}`
-      );
+      insertAtCursor(`🔗 ${linkTitle}: ${url}`);
 
       closeModal();
     });
@@ -689,16 +784,10 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (
-      !text &&
-      !selectedImage &&
-      !selectedVideo
-    ) {
+    if (!text && !selectedImage && !selectedVideo) {
       postText.focus();
 
-      showMessage(
-        "Please write something or add a photo/video."
-      );
+      showMessage("Please write something or add a photo/video.");
 
       return;
     }
@@ -710,13 +799,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       text: text,
 
-      image: selectedImage
-        ? URL.createObjectURL(selectedImage)
-        : null,
+      image: selectedImage ? URL.createObjectURL(selectedImage) : null,
 
-      video: selectedVideo
-        ? URL.createObjectURL(selectedVideo)
-        : null,
+      video: selectedVideo ? URL.createObjectURL(selectedVideo) : null,
 
       likes: 0,
 
@@ -724,7 +809,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       comments: [],
 
-      createdAt: new Date()
+      createdAt: new Date(),
     };
 
     posts.unshift(newPost);
@@ -753,8 +838,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      searchTerm =
-        searchInput.value.trim().toLowerCase();
+      searchTerm = searchInput.value.trim().toLowerCase();
 
       renderPosts();
     });
@@ -772,27 +856,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "Information"
+      "Information",
     );
 
     const text = createElement(
       "p",
       "mt-2 text-sm leading-6 text-slate-600",
-      message
+      message,
     );
 
     const closeBtn = createElement(
       "button",
       "mt-5 w-full rounded-2xl bg-teal-600 py-3 font-semibold text-white hover:bg-teal-700",
-      "OK"
+      "OK",
     );
 
     closeBtn.type = "button";
 
-    closeBtn.addEventListener(
-      "click",
-      closeModal
-    );
+    closeBtn.addEventListener("click", closeModal);
 
     wrapper.appendChild(title);
     wrapper.appendChild(text);
@@ -808,29 +889,23 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderPosts() {
     postsContainer.innerHTML = "";
 
-    postCount.textContent =
-      `${posts.length} ${
-        posts.length === 1 ? "Post" : "Posts"
-      }`;
+    postCount.textContent = `${posts.length} ${
+      posts.length === 1 ? "Post" : "Posts"
+    }`;
 
     // SEARCH USING FILTER
 
     const filteredPosts = posts.filter((post) => {
-      return post.name
-        .toLowerCase()
-        .includes(searchTerm);
+      return post.name.toLowerCase().includes(searchTerm);
     });
 
     // NO SEARCH RESULT
 
-    if (
-      filteredPosts.length === 0 &&
-      searchTerm !== ""
-    ) {
+    if (filteredPosts.length === 0 && searchTerm !== "") {
       const noResult = createElement(
         "div",
         "rounded-3xl bg-white/70 p-8 text-center text-slate-500",
-        `No posts found for "${searchTerm}"`
+        `No posts found for "${searchTerm}"`,
       );
 
       postsContainer.appendChild(noResult);
@@ -841,8 +916,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // RENDER USING FOREACH
 
     filteredPosts.forEach((post) => {
-      const postCard =
-        document.createElement("article");
+      const postCard = document.createElement("article");
 
       postCard.className =
         "relative overflow-visible rounded-3xl p-5 shadow-lg";
@@ -851,37 +925,32 @@ document.addEventListener("DOMContentLoaded", () => {
       // POST HEADER
       // ==========================
 
-      const header =
-        document.createElement("div");
+      const header = document.createElement("div");
 
-      header.className =
-        "flex items-center justify-between";
+      header.className = "flex items-center justify-between";
 
-      const userBox =
-        document.createElement("div");
+      const userBox = document.createElement("div");
 
-      userBox.className =
-        "flex items-center gap-3";
+      userBox.className = "flex items-center gap-3";
 
       const avatar = createElement(
         "div",
         "flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-teal-500 via-cyan-500 to-blue-500 font-bold text-white shadow-lg",
-        getInitial(post.name)
+        getInitial(post.name),
       );
 
-      const userInfo =
-        document.createElement("div");
+      const userInfo = document.createElement("div");
 
       const userName = createElement(
         "h3",
         "font-semibold text-slate-900",
-        post.name
+        post.name,
       );
 
       const time = createElement(
         "p",
         "text-xs text-slate-500",
-        formatTime(post.createdAt)
+        formatTime(post.createdAt),
       );
 
       userInfo.appendChild(userName);
@@ -894,21 +963,19 @@ document.addEventListener("DOMContentLoaded", () => {
       // MORE MENU
       // ==========================
 
-      const menuWrapper =
-        document.createElement("div");
+      const menuWrapper = document.createElement("div");
 
       menuWrapper.className = "relative";
 
       const moreBtn = createElement(
         "button",
         "flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-xl text-slate-500 hover:bg-white hover:shadow-md",
-        "⋯"
+        "⋯",
       );
 
       moreBtn.type = "button";
 
-      const menu =
-        document.createElement("div");
+      const menu = document.createElement("div");
 
       menu.className =
         "post-menu absolute right-0 top-11 z-50 hidden w-36 overflow-hidden rounded-2xl border border-white/70 bg-white/95 p-1 shadow-2xl";
@@ -916,13 +983,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const editBtn = createElement(
         "button",
         "flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm text-slate-700 hover:bg-teal-50",
-        "✏️ Edit"
+        "✏️ Edit",
       );
 
       const deleteBtn = createElement(
         "button",
         "flex w-full items-center gap-2 rounded-xl px-3 py-2 text-left text-sm text-red-600 hover:bg-red-50",
-        "🗑️ Delete"
+        "🗑️ Delete",
       );
 
       editBtn.type = "button";
@@ -931,13 +998,11 @@ document.addEventListener("DOMContentLoaded", () => {
       moreBtn.addEventListener("click", (e) => {
         e.stopPropagation();
 
-        document
-          .querySelectorAll(".post-menu")
-          .forEach((item) => {
-            if (item !== menu) {
-              item.classList.add("hidden");
-            }
-          });
+        document.querySelectorAll(".post-menu").forEach((item) => {
+          if (item !== menu) {
+            item.classList.add("hidden");
+          }
+        });
 
         menu.classList.toggle("hidden");
       });
@@ -969,7 +1034,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const text = createElement(
           "p",
           "mt-4 whitespace-pre-wrap break-words text-sm leading-7 text-slate-700",
-          post.text
+          post.text,
         );
 
         postCard.appendChild(text);
@@ -980,8 +1045,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // ==========================
 
       if (post.image) {
-        const image =
-          document.createElement("img");
+        const image = document.createElement("img");
 
         image.src = post.image;
 
@@ -998,8 +1062,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // ==========================
 
       if (post.video) {
-        const video =
-          document.createElement("video");
+        const video = document.createElement("video");
 
         video.src = post.video;
 
@@ -1015,23 +1078,17 @@ document.addEventListener("DOMContentLoaded", () => {
       // COMMENTS DISPLAY
       // ==========================
 
-      if (
-        post.comments &&
-        post.comments.length > 0
-      ) {
-        const commentsBox =
-          document.createElement("div");
+      if (post.comments && post.comments.length > 0) {
+        const commentsBox = document.createElement("div");
 
-        commentsBox.className =
-          "mt-4 space-y-2 border-t border-slate-100 pt-3";
+        commentsBox.className = "mt-4 space-y-2 border-t border-slate-100 pt-3";
 
         post.comments.forEach((comment) => {
-          const commentItem =
-            createElement(
-              "p",
-              "rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-600",
-              `💬 ${comment}`
-            );
+          const commentItem = createElement(
+            "p",
+            "rounded-xl bg-slate-50 px-3 py-2 text-sm text-slate-600",
+            `💬 ${comment}`,
+          );
 
           commentsBox.appendChild(commentItem);
         });
@@ -1043,8 +1100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // ACTIONS
       // ==========================
 
-      const actions =
-        document.createElement("div");
+      const actions = document.createElement("div");
 
       actions.className =
         "mt-5 flex items-center justify-between border-t border-white/60 pt-4";
@@ -1052,25 +1108,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const likeBtn = createElement(
         "button",
         "rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/70",
-        post.liked
-          ? `❤️ ${post.likes}`
-          : `🤍 ${post.likes}`
+        post.liked ? `❤️ ${post.likes}` : `🤍 ${post.likes}`,
       );
 
       const commentBtn = createElement(
         "button",
         "rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-white/70",
-        `💬 ${
-          post.comments
-            ? post.comments.length
-            : 0
-        }`
+        `💬 ${post.comments ? post.comments.length : 0}`,
       );
 
       const shareBtn = createElement(
         "button",
         "rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-white/70",
-        "↗️ Share"
+        "↗️ Share",
       );
 
       likeBtn.type = "button";
@@ -1124,40 +1174,31 @@ document.addEventListener("DOMContentLoaded", () => {
   function formatTime(date) {
     const now = new Date();
 
-    const seconds =
-      Math.floor(
-        (now - new Date(date)) / 1000
-      );
+    const seconds = Math.floor((now - new Date(date)) / 1000);
 
     if (seconds < 60) {
       return "Just now";
     }
 
-    const minutes =
-      Math.floor(seconds / 60);
+    const minutes = Math.floor(seconds / 60);
 
     if (minutes < 60) {
       return `${minutes} min ago`;
     }
 
-    const hours =
-      Math.floor(minutes / 60);
+    const hours = Math.floor(minutes / 60);
 
     if (hours < 24) {
       return `${hours} hr ago`;
     }
 
-    const days =
-      Math.floor(hours / 24);
+    const days = Math.floor(hours / 24);
 
     if (days < 7) {
-      return `${days} day${
-        days > 1 ? "s" : ""
-      } ago`;
+      return `${days} day${days > 1 ? "s" : ""} ago`;
     }
 
-    return new Date(date)
-      .toLocaleDateString();
+    return new Date(date).toLocaleDateString();
   }
 
   // ==============================
@@ -1165,60 +1206,51 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==============================
 
   function deletePost(id) {
-    const post =
-      posts.find((item) => item.id === id);
+    const post = posts.find((item) => item.id === id);
 
     if (!post) return;
 
-    const wrapper =
-      document.createElement("div");
+    const wrapper = document.createElement("div");
 
     wrapper.className = "p-5";
 
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "Delete this post?"
+      "Delete this post?",
     );
 
     const message = createElement(
       "p",
       "mt-2 text-sm leading-6 text-slate-500",
-      "This action cannot be undone."
+      "This action cannot be undone.",
     );
 
-    const buttons =
-      document.createElement("div");
+    const buttons = document.createElement("div");
 
-    buttons.className =
-      "mt-5 flex gap-3";
+    buttons.className = "mt-5 flex gap-3";
 
     const cancelBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-slate-100 py-3 font-semibold text-slate-600 hover:bg-slate-200",
-      "Cancel"
+      "Cancel",
     );
 
     const confirmBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-gradient-to-r from-red-500 to-rose-500 py-3 font-semibold text-white",
-      "Delete"
+      "Delete",
     );
 
     cancelBtn.type = "button";
     confirmBtn.type = "button";
 
-    cancelBtn.addEventListener(
-      "click",
-      closeModal
-    );
+    cancelBtn.addEventListener("click", closeModal);
 
     confirmBtn.addEventListener("click", () => {
       // FILTER
 
-      posts = posts.filter(
-        (item) => item.id !== id
-      );
+      posts = posts.filter((item) => item.id !== id);
 
       renderPosts();
 
@@ -1241,20 +1273,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==============================
 
   function editPost(id) {
-    const post =
-      posts.find((item) => item.id === id);
+    const post = posts.find((item) => item.id === id);
 
     if (!post) return;
 
-    const wrapper =
-      document.createElement("div");
+    const wrapper = document.createElement("div");
 
     wrapper.className = "p-5";
 
     const title = createElement(
       "h3",
       "mb-4 text-lg font-bold text-slate-900",
-      "✏️ Edit Post"
+      "✏️ Edit Post",
     );
 
     // NAME LABEL
@@ -1262,13 +1292,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const nameLabel = createElement(
       "label",
       "mb-2 block text-sm font-semibold text-slate-700",
-      "Name"
+      "Name",
     );
 
     // EDIT NAME INPUT
 
-    const editNameInput =
-      document.createElement("input");
+    const editNameInput = document.createElement("input");
 
     editNameInput.type = "text";
 
@@ -1282,13 +1311,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const textLabel = createElement(
       "label",
       "mb-2 block text-sm font-semibold text-slate-700",
-      "Post"
+      "Post",
     );
 
     // EDIT POST INPUT
 
-    const editInput =
-      document.createElement("textarea");
+    const editInput = document.createElement("textarea");
 
     editInput.value = post.text;
 
@@ -1297,38 +1325,31 @@ document.addEventListener("DOMContentLoaded", () => {
     editInput.className =
       "w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-teal-400 focus:ring-4 focus:ring-teal-100";
 
-    const buttons =
-      document.createElement("div");
+    const buttons = document.createElement("div");
 
-    buttons.className =
-      "mt-4 flex gap-3";
+    buttons.className = "mt-4 flex gap-3";
 
     const cancelBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-slate-100 py-3 font-semibold text-slate-600 hover:bg-slate-200",
-      "Cancel"
+      "Cancel",
     );
 
     const saveBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-600 py-3 font-semibold text-white shadow-lg",
-      "Save Changes"
+      "Save Changes",
     );
 
     cancelBtn.type = "button";
     saveBtn.type = "button";
 
-    cancelBtn.addEventListener(
-      "click",
-      closeModal
-    );
+    cancelBtn.addEventListener("click", closeModal);
 
     saveBtn.addEventListener("click", () => {
-      const newName =
-        editNameInput.value.trim();
+      const newName = editNameInput.value.trim();
 
-      const newText =
-        editInput.value.trim();
+      const newText = editInput.value.trim();
 
       if (!newName) {
         editNameInput.focus();
@@ -1336,11 +1357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      if (
-        !newText &&
-        !post.image &&
-        !post.video
-      ) {
+      if (!newText && !post.image && !post.video) {
         editInput.focus();
 
         return;
@@ -1384,57 +1401,48 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==============================
 
   function openCommentModal(post) {
-    const wrapper =
-      document.createElement("div");
+    const wrapper = document.createElement("div");
 
     wrapper.className = "p-5";
 
     const title = createElement(
       "h3",
       "text-lg font-bold text-slate-900",
-      "💬 Add Comment"
+      "💬 Add Comment",
     );
 
-    const commentInput =
-      document.createElement("textarea");
+    const commentInput = document.createElement("textarea");
 
     commentInput.rows = 4;
 
-    commentInput.placeholder =
-      "Write a comment...";
+    commentInput.placeholder = "Write a comment...";
 
     commentInput.className =
       "mt-4 w-full resize-none rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-teal-400 focus:ring-4 focus:ring-teal-100";
 
-    const buttons =
-      document.createElement("div");
+    const buttons = document.createElement("div");
 
-    buttons.className =
-      "mt-4 flex gap-3";
+    buttons.className = "mt-4 flex gap-3";
 
     const cancelBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-slate-100 py-3 font-semibold text-slate-600",
-      "Cancel"
+      "Cancel",
     );
 
     const commentBtn = createElement(
       "button",
       "flex-1 rounded-2xl bg-gradient-to-r from-teal-500 to-cyan-600 py-3 font-semibold text-white",
-      "Comment"
+      "Comment",
     );
 
     cancelBtn.type = "button";
     commentBtn.type = "button";
 
-    cancelBtn.addEventListener(
-      "click",
-      closeModal
-    );
+    cancelBtn.addEventListener("click", closeModal);
 
     commentBtn.addEventListener("click", () => {
-      const comment =
-        commentInput.value.trim();
+      const comment = commentInput.value.trim();
 
       if (!comment) {
         commentInput.focus();
@@ -1473,8 +1481,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==============================
 
   function sharePost(post) {
-    const shareText =
-      `${post.name} shared a post:\n\n${post.text || ""}`;
+    const shareText = `${post.name} shared a post:\n\n${post.text || ""}`;
 
     // WEB SHARE API
 
@@ -1482,7 +1489,7 @@ document.addEventListener("DOMContentLoaded", () => {
       navigator
         .share({
           title: "Community Post",
-          text: shareText
+          text: shareText,
         })
         .catch(() => {
           // User cancelled or sharing failed
@@ -1494,29 +1501,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // CLIPBOARD API
     // USING THEN/CATCH - NO ASYNC/AWAIT
 
-    if (
-      navigator.clipboard &&
-      navigator.clipboard.writeText
-    ) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard
         .writeText(shareText)
         .then(() => {
-          showMessage(
-            "Post copied to clipboard! 📋"
-          );
+          showMessage("Post copied to clipboard! 📋");
         })
         .catch(() => {
-          showMessage(
-            "Could not copy the post."
-          );
+          showMessage("Could not copy the post.");
         });
 
       return;
     }
 
-    showMessage(
-      "Sharing is not supported on this browser."
-    );
+    showMessage("Sharing is not supported on this browser.");
   }
 
   // ==============================
@@ -1524,11 +1522,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==============================
 
   document.addEventListener("click", () => {
-    document
-      .querySelectorAll(".post-menu")
-      .forEach((menu) => {
-        menu.classList.add("hidden");
-      });
+    document.querySelectorAll(".post-menu").forEach((menu) => {
+      menu.classList.add("hidden");
+    });
   });
 
   // ==============================

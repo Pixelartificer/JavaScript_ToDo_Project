@@ -227,9 +227,25 @@
         filter: none;
       }
 
+      /* Dynamic positioning adjustments */
+      .analogContainer {
+        transform: rotate(0deg);
+      }
+
+      .analogHand {
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        transform-origin: bottom center;
+        border-radius: 4px;
+        z-index: 10;
+        transition: transform 0.05s cubic-bezier(0.4, 2.08, 0.55, 0.44);
+      }
+
       @media (max-width: 1100px) {
         .clockContainer {
-          gap: 55px !important;
+          gap: 40px !important;
+          flex-wrap: wrap;
         }
 
         .clockCircle {
@@ -285,12 +301,12 @@
 
   <body class="min-h-screen text-white font-poppins">
     <main class="min-h-screen flex items-center justify-center px-5 py-10">
-      <section class="w-full max-w-[1250px]">
+      <section class="w-full max-w-[1350px]">
         <div class="text-center mb-12">
           <div
             class="inline-block px-5 py-2 mb-5 rounded-full border border-purple-400/20 bg-purple-500/10 text-purple-300 text-xs sm:text-sm tracking-[4px] uppercase"
           >
-            Digital Time
+            Digital & Analog Time
           </div>
           <h1
             class="font-semibold tracking-tight bg-gradient-to-r from-purple-200 via-purple-400 to-fuchsia-400 bg-clip-text text-transparent clockHeading"
@@ -299,7 +315,7 @@
           </h1>
           <p
             id="calendarDate"
-            class="mt-5 text-lg sm:text-xl text-purple-200/90 tracking-[4px] font-orbitron"
+            class="mt-5 text-[32px] sm:text-[20px] text-purple-200/90 tracking-[4px] font-orbitron"
           >
             23 : 09 : 2026
           </p>
@@ -315,7 +331,7 @@
         >
           <div
             id="clockContainer"
-            class="clockContainer flex flex-row justify-center items-center gap-[80px]"
+            class="clockContainer flex flex-row justify-center items-center gap-[50px]"
           >
             <div
               id="hourDots"
@@ -331,6 +347,12 @@
               id="secondDots"
               class="clockCircle"
               style="--clockColor: #a78bfa"
+            ></div>
+            <!-- 4th Circle: Analog Clock -->
+            <div
+              id="analogClock"
+              class="clockCircle analogContainer"
+              style="--clockColor: #38bdf8"
             ></div>
           </div>
         </div>
@@ -354,7 +376,7 @@
         <p
           class="text-center mt-8 text-[10px] sm:text-xs text-white/25 tracking-[0.2em]"
         >
-          HOURS • MINUTES • SECONDS
+          HOURS • MINUTES • SECONDS • ANALOG
         </p>
       </section>
     </main>

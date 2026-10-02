@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language Translator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-slate-950 flex items-center justify-center px-4 py-10">
+  <div class="absolute w-[300px] h-[300px] bg-purple-600/20 rounded-full blur-[120px] top-10 left-10"></div>
+  <div class="absolute w-[300px] h-[300px] bg-blue-600/20 rounded-full blur-[120px] bottom-10 right-10"></div>
+  <div class="relative w-full max-w-[750px]">
+    <div class="bg-white/10 backdrop-blur-2xl border border-white/10 rounded-[30px] p-6 sm:p-8 shadow-2xl">
+
+      <!-- Header -->
+
+      <div class="text-center mb-8">
+        <div class="w-[70px] h-[70px] mx-auto mb-5 rounded-2xl bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
+          <span class="text-3xl">
+            🌐
+          </span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-semibold text-white">
+          Language Translator
+        </h1>
+        <p class="text-white/40 text-sm mt-2">
+          Translate and speak in another language
+        </p>
+      </div>
+
+      <!-- Language Selection -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr] gap-4 items-end mb-6">
+
+        <!-- From -->
+
+        <div>
+          <label
+            for="fromLanguage"
+            class="block text-sm font-medium text-white/70 mb-2"
+          >
+            I Speak
+          </label>
+          <select
+            id="fromLanguage"
+            class="w-full rounded-2xl bg-slate-900 border border-white/10 px-4 py-4 text-white outline-none focus:border-purple-500/60"
+          >
+            <option value="en">English</option>
+            <option value="bn">Bengali</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+            <option value="ru">Russian</option>
+          </select>
+        </div>
+
+        <!-- Swap -->
+
+        <button
+          id="swapButton"
+          type="button"
+          class="w-full sm:w-[50px] h-[50px] rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 text-white text-xl transition active:scale-95"
+        >
+                  ↔
+        </button>
+
+        <!-- To -->
+
+        <div>
+          <label
+            for="toLanguage"
+            class="block text-sm font-medium text-white/70 mb-2"
+          >
+            Translate To
+          </label>
+          <select
+            id="toLanguage"
+            class="w-full rounded-2xl bg-slate-900 border border-white/10 px-4 py-4 text-white outline-none focus:border-blue-500/60"
+          >
+            <option value="fr">French</option>
+            <option value="en">English</option>
+            <option value="bn">Bengali</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+            <option value="it">Italian</option>
+            <option value="hi">Hindi</option>
+            <option value="ar">Arabic</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="zh">Chinese</option>
+            <option value="ru">Russian</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Input -->
+
+      <div class="mb-5">
+        <label
+          for="inputText"
+          class="block text-sm font-medium text-white/70 mb-2"
+        >
+          Your Text
+        </label>
+        <textarea
+          id="inputText"
+          rows="5"
+          placeholder="Type something here..."
+          class="w-full resize-none rounded-2xl bg-black/20 border border-white/10 px-5 py-4 text-white placeholder:text-white/20 outline-none focus:border-purple-500/60 transition"
+        ></textarea>
+      </div>
+
+      <!-- Translate Button -->
+
+      <button
+        id="translateButton"
+        class="w-full py-4 rounded-2xl bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-semibold transition active:scale-[0.98]"
+      >
+        Translate
+      </button>
+
+      <!-- Translation Result -->
+
+      <div class="mt-6">
+        <div class="flex justify-between items-center mb-2">
+          <label class="text-sm font-medium text-white/70">
+            Translation
+          </label>
+          <button
+            id="copyButton"
+            class="text-xs text-white/40 hover:text-white transition"
+          >
+            Copy
+          </button>
+        </div>
+        <div
+          id="translation"
+          class="min-h-[130px] rounded-2xl bg-black/20 border border-white/10 px-5 py-4 text-white/80 leading-7"
+          
+        >
+          Your translation will appear here...
+        </div>
+      </div>
+
+      <!-- Speak Button -->
+
+      <button
+        id="speakButton"
+        class="w-full mt-5 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 text-white font-semibold transition active:scale-[0.98]"
+      >
+        🔊 Speak Translation
+      </button>
+
+      <!-- Stop -->
+
+      <button
+        id="stopButton"
+        class="w-full mt-3 py-3 rounded-2xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 text-red-300 transition"
+      >
+        ⏹ Stop
+      </button>
+
+      <!-- Status -->
+
+      <p
+        id="status"
+        class="text-center text-white/30 text-xs mt-5"
+      >
+        Ready
+      </p>
+    </div>
+  </div>
+
+  <script src="./toDo_09.js"></script>
+  
+</body>
+</html>

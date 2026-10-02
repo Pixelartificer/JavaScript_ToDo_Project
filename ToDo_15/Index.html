@@ -44,12 +44,7 @@
             rgba(14, 165, 233, 0.2),
             transparent 28%
           ),
-          linear-gradient(
-            135deg,
-            #ecfeff 0%,
-            #f0fdfa 45%,
-            #eff6ff 100%
-          );
+          linear-gradient(135deg, #ecfeff 0%, #f0fdfa 45%, #eff6ff 100%);
 
         background-attachment: fixed;
       }
@@ -396,7 +391,6 @@
   </head>
 
   <body class="min-h-screen font-[Poppins] text-slate-800">
-
     <!-- Decorative Background -->
     <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div
@@ -424,9 +418,7 @@
             My Community
           </h1>
 
-          <p class="text-xs text-slate-500">
-            Share your thoughts
-          </p>
+          <p class="text-xs text-slate-500">Share your thoughts</p>
         </div>
 
         <button
@@ -440,19 +432,14 @@
 
     <!-- Main -->
     <main class="mx-auto max-w-4xl px-4 py-8">
-
       <!-- Create Post -->
-      <section
-        class="relative overflow-hidden rounded-3xl p-5"
-      >
-
+      <section class="relative overflow-hidden rounded-3xl p-5">
         <!-- Top Gradient Line -->
         <div
           class="absolute left-0 right-0 top-0 h-1 bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500"
         ></div>
 
         <div class="mb-5 flex items-center gap-3">
-
           <div
             class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-cyan-600 text-white shadow-lg"
           >
@@ -460,15 +447,12 @@
           </div>
 
           <div>
-            <h2 class="text-lg font-semibold text-slate-900">
-              Create Post
-            </h2>
+            <h2 class="text-lg font-semibold text-slate-900">Create Post</h2>
 
             <p class="text-xs text-slate-500">
               Share something with the community
             </p>
           </div>
-
         </div>
 
         <!-- Name -->
@@ -495,7 +479,6 @@
 
         <!-- Post Options -->
         <div class="mt-5 flex flex-wrap gap-2">
-
           <button
             id="photoBtn"
             type="button"
@@ -535,7 +518,6 @@
           >
             🔗 Link
           </button>
-
         </div>
 
         <!-- Post Button -->
@@ -546,21 +528,16 @@
         >
           ✨ Post
         </button>
-
       </section>
 
       <!-- Recent Posts -->
       <section class="mt-10">
-
         <!-- SEARCH BAR -->
         <div
           class="mb-5 rounded-2xl border border-white/70 bg-white/70 p-3 shadow-sm backdrop-blur-xl"
         >
           <div class="flex items-center gap-3">
-
-            <span class="text-lg">
-              🔎
-            </span>
+            <span class="text-lg"> 🔎 </span>
 
             <input
               id="searchInput"
@@ -568,20 +545,14 @@
               placeholder="Search posts by name..."
               class="w-full rounded-xl bg-transparent py-2 px-2 text-sm outline-none placeholder:text-slate-400"
             />
-
           </div>
         </div>
 
         <div class="mb-5 flex items-center justify-between">
-
           <div>
-            <h2 class="text-lg font-semibold text-slate-900">
-              Recent Posts
-            </h2>
+            <h2 class="text-lg font-semibold text-slate-900">Recent Posts</h2>
 
-            <p class="text-xs text-slate-500">
-              Latest community activity
-            </p>
+            <p class="text-xs text-slate-500">Latest community activity</p>
           </div>
 
           <span
@@ -590,21 +561,14 @@
           >
             0 Posts
           </span>
-
         </div>
 
         <!-- Posts -->
-        <div
-          id="postsContainer"
-          class="space-y-5"
-        ></div>
-
+        <div id="postsContainer" class="space-y-5"></div>
       </section>
-
     </main>
 
     <!-- JavaScript -->
     <script src="./toDo_09.js"></script>
-
   </body>
 </html>
